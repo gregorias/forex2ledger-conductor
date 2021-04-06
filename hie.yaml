@@ -1,0 +1,13 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "forex2ledger-conductor:lib"
+
+    - path: "./app/Main.hs"
+      component: "forex2ledger-conductor:exe:forex2ledger-conductor"
+
+    - path: "./app/Paths_hledupt.hs"
+      component: "forex2ledger-conductor:exe:forex2ledger-conductor"
+
+    - path: "./test"
+      component: "forex2ledger-conductor:test:forex2ledger-conductor-test"

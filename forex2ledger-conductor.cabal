@@ -1,0 +1,69 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           forex2ledger-conductor
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/gregorias/forex2ledger-conductor#readme>
+homepage:       https://github.com/gregorias/forex2ledger-conductor#readme
+bug-reports:    https://github.com/gregorias/forex2ledger-conductor/issues
+author:         Grzegorz Milka
+maintainer:     grzegorzmilka@gmail.com
+copyright:      Copyright (c) 2021 Grzegorz Milka
+license:        AGPL-3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/gregorias/forex2ledger-conductor
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_forex2ledger_conductor
+  hs-source-dirs:
+      src
+  default-extensions:
+      DerivingStrategies GeneralisedNewtypeDeriving InstanceSigs LambdaCase NoImplicitPrelude NumericUnderscores ScopedTypeVariables TupleSections TypeApplications UnicodeSyntax
+  ghc-options: -Wunused-packages
+  build-depends:
+      base >=4.13 && <5
+    , relude
+  default-language: Haskell2010
+
+executable forex2ledger-conductor
+  main-is: Main.hs
+  other-modules:
+      Paths_forex2ledger_conductor
+  hs-source-dirs:
+      app
+  default-extensions:
+      DerivingStrategies GeneralisedNewtypeDeriving InstanceSigs LambdaCase NoImplicitPrelude NumericUnderscores ScopedTypeVariables TupleSections TypeApplications UnicodeSyntax
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wunused-packages
+  build-depends:
+      base >=4.13 && <5
+    , relude
+    , turtle
+  default-language: Haskell2010
+
+test-suite forex2ledger-conductor-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_forex2ledger_conductor
+  hs-source-dirs:
+      test
+  default-extensions:
+      DerivingStrategies GeneralisedNewtypeDeriving InstanceSigs LambdaCase NoImplicitPrelude NumericUnderscores ScopedTypeVariables TupleSections TypeApplications UnicodeSyntax
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Spec -Wunused-packages
+  build-depends:
+      base >=4.13 && <5
+    , forex2ledger-conductor
+    , relude
+  default-language: Haskell2010
