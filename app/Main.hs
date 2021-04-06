@@ -19,4 +19,4 @@ pricesTarget = "/home/grzesiek/Documents/Finance/Wallet/updates/prices.dat"
 
 main :: IO ()
 main = do
-  append pricesTarget (forex2Ledger <|> "")
+  append pricesTarget ("" <|> forex2Ledger)

@@ -63,5 +63,3 @@ tests:
     - -with-rtsopts=-N
     - -main-is Spec
     - -Wunused-packages
-    dependencies:
-    - forex2ledger-conductor
