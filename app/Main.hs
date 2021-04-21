@@ -15,7 +15,7 @@ forex2Ledger =
     empty
 
 pricesTarget :: Turtle.FilePath
-pricesTarget = "/home/grzesiek/Documents/Finance/Wallet/updates/prices.dat"
+pricesTarget = "/home/grzesiek/Documents/Finance/Wallet/updates/prices.ledger"
 
 main :: IO ()
 main = do
