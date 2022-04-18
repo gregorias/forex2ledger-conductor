@@ -8,14 +8,14 @@ import Turtle
 forex2Ledger :: Shell Line
 forex2Ledger =
   inproc
-    "/home/grzesiek/.local/bin/forex2ledger"
+    "/Users/grzesiek/.local/bin/forex2ledger"
     [ "--config_file"
-    , "/home/grzesiek/Code/forex2ledger/config.toml"
+    , "/Users/grzesiek/Code/forex2ledger/config.toml"
     ]
     empty
 
 pricesTarget :: Turtle.FilePath
-pricesTarget = "/home/grzesiek/Documents/Finance/Wallet/updates/prices.ledger"
+pricesTarget = "/Users/grzesiek/Documents/Finance/Wallet/updates/prices.ledger"
 
 main :: IO ()
 main = do
