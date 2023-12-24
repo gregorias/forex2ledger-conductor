@@ -1,13 +1,14 @@
-name:                forex2ledger-conductor
-version:             0.1.0.0
-github:              "gregorias/forex2ledger-conductor"
-license:             AGPL-3
-author:              "Grzegorz Milka"
-maintainer:          "grzegorzmilka@gmail.com"
-copyright:           "Copyright (c) 2021 Grzegorz Milka"
+name: forex2ledger-conductor
+version: 0.1.0.0
+github: "gregorias/forex2ledger-conductor"
+license: AGPL-3
+license-file: LICENSE
+author: "Grzegorz Milka"
+maintainer: "grzegorzmilka@gmail.com"
+copyright: "Copyright (c) 2021-23 Grzegorz Milka"
 
 extra-source-files:
-- README.md
+  - README.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -16,50 +17,61 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/gregorias/forex2ledger-conductor#readme>
+description: Please see the README on GitHub at <https://github.com/gregorias/forex2ledger-conductor#readme>
+
+language: GHC2021
 
 # Defaults recommended by https://kowainik.github.io/posts/2019-02-06-style-guide#default-extensions
 # Also use Relude
 default-extensions:
-  DerivingStrategies
-  GeneralisedNewtypeDeriving
-  InstanceSigs
-  LambdaCase
-  NoImplicitPrelude
-  NumericUnderscores
-  ScopedTypeVariables
-  TupleSections
-  TypeApplications
-  UnicodeSyntax
+  - DataKinds
+  - DerivingStrategies
+  - DerivingVia
+  - DuplicateRecordFields
+  - FunctionalDependencies
+  - GADTs
+  - LambdaCase
+  - MultiWayIf
+  - NoImplicitPrelude
+  - OverloadedLabels
+  - OverloadedRecordDot
+  - OverloadedStrings
+  - QuasiQuotes
+  - TypeFamilies
+  - TypeOperators
+
+ghc-options:
+  - -Wall
+  - -Werror
+  - -Wcompat
+  - -Wmissing-deriving-strategies
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wmissing-export-lists
+  - -Wpartial-fields
+  - -Wredundant-constraints
+  - -Wno-type-defaults
+  - -Wno-partial-type-signatures
+  - -Wno-name-shadowing
 
 dependencies:
-- base >= 4.13 && < 5
-- relude
+  - base >= 4.13 && < 5
+  - relude
 
 library:
   source-dirs: src
   ghc-options:
-  - -Wunused-packages
+    - -Wunused-packages
 
 executables:
   forex2ledger-conductor:
-    main:                Main.hs
-    source-dirs:         app
+    main: Main.hs
+    source-dirs: app
     ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    - -Wunused-packages
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+      - -Wunused-packages
     dependencies:
-    - turtle
-
-tests:
-  forex2ledger-conductor-test:
-    main:                Spec.hs
-    source-dirs:         test
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    - -main-is Spec
-    - -Wunused-packages
+      - turtle
